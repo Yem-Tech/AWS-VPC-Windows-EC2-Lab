@@ -169,15 +169,19 @@ Successful RDP validates the configured remote-access path. General web browsing
 
 ## Skills demonstrated
 
-- Planning IPv4 CIDR ranges for a VPC and subnet.
-- Configuring an internet gateway and default route.
-- Understanding implicit main route table associations.
-- Applying source-restricted security group rules.
-- Deploying Windows EC2 into a custom network.
-- Retrieving encrypted Windows credentials with an EC2 key pair.
-- Troubleshooting a blocked RDP file using the native client.
-- Verifying guest networking with PowerShell.
-- Documenting configuration and results with screenshot evidence.
+In this project, I built an AWS network, deployed a Windows server, and configured controlled remote access. My hands-on work included:
+
+- **Cloud networking:** I created a custom VPC and subnet to provide a dedicated network for my Windows EC2 instance.
+- **Network routing:** I attached an internet gateway and configured the route table so my instance could support internet-based remote access.
+- **Network security and access control:** I configured a security group to allow RDP connections on TCP port `3389` only from my public IP address.
+- **Least privilege:** I limited remote access to one source IP instead of allowing connections from anywhere on the internet.
+- **Cloud infrastructure deployment:** I launched my Windows EC2 instance in the custom subnet and applied the security group I created.
+- **Credential handling:** I used my EC2 private key to decrypt the initial Administrator password without including credentials in my project documentation.
+- **Troubleshooting:** When Smart App Control blocked the downloaded RDP file, I connected through the built-in Windows Remote Desktop client while keeping the protection enabled.
+- **Network validation:** I used `ipconfig` inside the remote session to confirm that the server's private IP, `10.0.1.197`, matched my subnet configuration.
+- **Technical documentation:** I recorded the configuration and results with eleven screenshots, then redacted account identifiers and public IP addresses for my portfolio.
+
+This lab strengthened my understanding of how cloud networking, security groups, least privilege, and credential handling work together to support controlled access to an AWS server.
 
 ## Security and cost considerations
 
